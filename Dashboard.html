@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo Preview - DashboardPack</title>
+    <link rel="stylesheet" href="Dashboard_body.css">
+    <link rel="stylesheet" href="Dashboard_Section.css">
+    <link rel="stylesheet" href="Main_Content.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Sarabun:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="dashboard-body">
+        <div class="dashboard-header">
+            <div class="menu">
+                <div class="toggle-icon"><i class="fa-solid fa-toggle-on" onClick="toggleNav()"></i></div>
+                <div class="logo"><a href="#">ADMINDEK</a></div>
+                <div class="menu-icon" onClick="showHideProfile()"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+            <div class="profile" >
+                <div class="profile-left">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-x" onClick="hideSearch()"></i>
+                        <input type="text" placeholder="Enter Keyword">
+                    </div>
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"  onClick="showSearch()"></i>
+                    </div>
+                    <div class="max-min">
+                        <div class="max" onClick="toggleMinMax()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3"/></svg>
+                        </div>
+                        <div class="min" onClick="toggleMinMax()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3m8 0v-3a2 2 0 0 1 2-2h3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="message">
+                        <i class="fa-regular fa-message"></i>
+                    </div>
+                    <div class="user-profile">
+                        <img src="user-professoer.png" alt="">
+                        <div class="user-name">Professor</div>
+                        <i class="fa-solid fa-chevron-down"  onClick="toggleUserMenu()"></i>
+                    </div>
+                    <div class="usermenu">
+                        <ul>
+                            <li><i class="fa-solid fa-gear"></i><span>Settings</span></li>
+                            <li><i class="fa-solid fa-user"></i><span>Profile</span></li>
+                            <li><i class="fa-solid fa-envelope"></i><span>My Messages</span></li>
+                            <li><i class="fa-solid fa-lock"></i><span>Lock Screen</span></li>
+                            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="nav">
+            <div class="menu-group">
+                <div class="heading">Navigation</div>
+                <ul>
+                    <li class="bar selected show">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 36 36"><path fill="currentColor" d="m33.71 17.29l-15-15a1 1 0 0 0-1.41 0l-15 15a1 1 0 0 0 1.41 1.41L18 4.41l14.29 14.3a1 1 0 0 0 1.41-1.41Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M28 32h-5V22H13v10H8V18l-2 2v12a2 2 0 0 0 2 2h7V24h6v10h7a2 2 0 0 0 2-2V19.76l-2-2Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/>
+                            </svg>
+                            <span>Dashboard</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Default</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>CRM</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Analytics</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M216 42H40a14 14 0 0 0-14 14v144a14 14 0 0 0 14 14h176a14 14 0 0 0 14-14V56a14 14 0 0 0-14-14ZM40 54h176a2 2 0 0 1 2 2v42H38V56a2 2 0 0 1 2-2Zm-2 146v-90h60v92H40a2 2 0 0 1-2-2Zm178 2H110v-92h108v90a2 2 0 0 1-2 2Z"/></svg>
+                        <span>Page loyouts</span>
+                        <div class="list">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Vertical</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Horizontal</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Bottom Menu</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20"><path fill="currentColor" d="M2 4.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1-.5-.5Zm0 5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1-.5-.5Zm.5 4.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-15Z"/></svg>
+                        <span>Navigation</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M15.95 12.3L11.7 8.05q-.15-.15-.212-.325t-.063-.375q0-.2.063-.375t.212-.325l4.25-4.25q.15-.15.325-.212t.375-.063q.2 0 .375.063t.325.212l4.25 4.25q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.25 4.25q-.15.15-.325.213t-.375.062q-.2 0-.375-.062t-.325-.213ZM3 10V4q0-.425.288-.713T4 3h6q.425 0 .713.288T11 4v6q0 .425-.288.713T10 11H4q-.425 0-.713-.288T3 10Zm10 10v-6q0-.425.288-.713T14 13h6q.425 0 .713.288T21 14v6q0 .425-.288.713T20 21h-6q-.425 0-.713-.288T13 20ZM3 20v-6q0-.425.288-.713T4 13h6q.425 0 .713.288T11 14v6q0 .425-.288.713T10 21H4q-.425 0-.713-.288T3 20ZM5 9h4V5H5v4Zm11.675 1.2L19.5 7.375L16.675 4.55L13.85 7.375l2.825 2.825ZM15 19h4v-4h-4v4ZM5 19h4v-4H5v4ZM9 9Zm4.85-1.625ZM9 15Zm6 0Z"/></svg>
+                            <span>Widget</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Statistic</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Data</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Chart Widget</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">UI Element</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="m222.72 67.9l-88-48.17a13.9 13.9 0 0 0-13.44 0l-88 48.18A14 14 0 0 0 26 80.18v95.64a14 14 0 0 0 7.28 12.27l88 48.18a13.92 13.92 0 0 0 13.44 0l88-48.18a14 14 0 0 0 7.28-12.27V80.18a14 14 0 0 0-7.28-12.28ZM127 30.25a2 2 0 0 1 1.92 0L212.51 76L128 122.24L43.49 76ZM39 177.57a2 2 0 0 1-1-1.75V86.66l84 46V223Zm177.92 0L134 223v-90.36l84-46v89.16a2 2 0 0 1-1 1.77Z"/></svg>
+
+                            <span>Basic</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Alert</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Breadcrumbs</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Button</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Box-Shadow</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Accordion</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Generic Class</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Tabs</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Color</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Label Badge</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Progress Bar</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>List</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Tooltip And Popover</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Typograpy</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Other</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M17.057 2.544a.2.2 0 0 1 .378-.008l3.114 8.31l1.398 3.73a.2.2 0 0 1-.07.232l-9.76 7.106a.2.2 0 0 1-.235 0l-9.76-7.106a.2.2 0 0 1-.069-.231l1.398-3.73l.167-.45l2.944-7.861a.2.2 0 0 1 .378.008l2.47 7.6a.2.2 0 0 0 .19.137h4.8a.2.2 0 0 0 .19-.138l2.467-7.599Z" clip-rule="evenodd"/></svg>
+                            <span>Advance</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Draggable</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Modal</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Notifications</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Rating</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Range Slider</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Slider</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Syntax Highlighter</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Tour</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Tree View</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Nestable</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Toolbar</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16.5 9.4L7.55 4.24M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.29 7L12 12l8.71-5M12 22V12"/></g></svg>
+                            <span>Extra</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Session Timeout</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Session Idle Timeout</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Offilne</span>
+                                </li>
+                            </ul>
+                        </div>  
+                    </li>
+                    <li class="bar">
+                        <div class="grp animation">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192s192-86 192-192Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M360 94.59V296m83.13-83.13L296 360m121.41 0H216m83.13 83.13l-144-144M152 416V216m-83.13 83.13l144-144M94.59 152H288m-75.13-83.13L360 216"/></svg>
+                            </div>
+                            <span>Animations</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M180 144h-20v-32h20a36 36 0 1 0-36-36v20h-32V76a36 36 0 1 0-36 36h20v32H76a36 36 0 1 0 36 36v-20h32v20a36 36 0 1 0 36-36Zm-20-68a20 20 0 1 1 20 20h-20ZM56 76a20 20 0 0 1 40 0v20H76a20 20 0 0 1-20-20Zm40 104a20 20 0 1 1-20-20h20Zm16-68h32v32h-32Zm68 88a20 20 0 0 1-20-20v-20h20a20 20 0 0 1 0 40Z"/></svg>
+                            <span>Icons</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Font Awesome</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Themify</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Simple Line Icon</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Forms</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M9 4H6a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-3M9 3h6v4H9V3z"/></svg>
+                            <span>Form</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Components</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Add-On</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Advance</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Validation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M6.414 15.89L16.556 5.748l-1.414-1.414L5 14.476v1.414h1.414Zm.829 2H3v-4.243L14.435 2.212a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 17.89ZM3 19.89h18v2H3v-2Z"/></svg>
+                        <span>Form Picker</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5zM16 8L2 22m15.5-7H9"/></svg>
+                        <span>Form Select</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91c4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83c-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25l6 2.25v4.7z"/></svg>
+                            <span>Form Masking</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M15.414 5h5.594c.548 0 .992.445.992 1v14c0 .552-.455 1-.992 1H2.992A.994.994 0 0 1 2 20V6c0-.552.455-1 .992-1h5.594L6.05 2.465L7.464 1.05L11.414 5h1.172l3.95-3.95l1.414 1.415L15.414 5ZM4 7v12h16V7H4Z"/></svg>
+                            <span>Form Wizard</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Tables</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></g></svg>
+                            <span>Bootstrap table</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Basic Table</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Sizing Table</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Border Table</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Styling Table</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5v-3h3.56c.69 1.19 1.97 2 3.45 2s2.75-.81 3.45-2H19v3zm0-5h-4.99c0 1.1-.9 2-2 2s-2-.9-2-2H5V5h14v9z"/></svg>
+                            <span>Data Table</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Basic Initialization</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Advance Initialization</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Styling</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>API</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Ajax</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Server Side</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Plug-In</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Data-Sources</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M2 4.6v4.8c0 .9.5 1.6 1.2 1.6h17.7c.6 0 1.2-.7 1.2-1.6V4.6C22 3.7 21.5 3 20.8 3H3.2C2.5 3 2 3.7 2 4.6M10 8V6H9v2h1M5 8h2V6H5v2m15 1H4V5h16v4M2 14.6v4.8c0 .9.5 1.6 1.2 1.6h17.7c.6 0 1.2-.7 1.2-1.6v-4.8c0-.9-.5-1.6-1.2-1.6H3.2c-.7 0-1.2.7-1.2 1.6m8 3.4v-2H9v2h1m-5 0h2v-2H5v2m15 1H4v-4h16v4Z"/></svg>
+                            <span>DT Extensions</span> 
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Auto Fill</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Button</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Col Reorder</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Fixed Columns</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Fixed Header</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Key Table</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Responsive</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Row Reorder</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Scroller</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Select Table</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9h14M5 15h14M11 4L7 20M17 4l-4 16"/></svg>
+                            <span>FooTable</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32"><path fill="currentColor" d="M22.996 30H9.004a1.002 1.002 0 0 1-.821-1.577l6.998-9.996a1 1 0 0 1 1.638 0l6.998 9.996a1.002 1.002 0 0 1-.82 1.577ZM10.92 28h10.16L16 20.744Z"/><path fill="currentColor" d="M28 24h-4v-2h4V6H4v16h4v2H4a2.002 2.002 0 0 1-2-2V6a2.002 2.002 0 0 1 2-2h24a2.002 2.002 0 0 1 2 2v16a2.002 2.002 0 0 1-2 2Z"/></svg>
+                            <span>Handson Table</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Apperance</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Data Operation</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Rows Columns</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Columns Only</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Cell Features</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Cell Types</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Integrations</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Rows Only</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Utilities</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 512a32 32 0 1 1 64 0v352a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32h352a32 32 0 0 1 0 64H192v640h640V512z"/><path fill="currentColor" d="m469.952 554.24l52.8-7.552L847.104 222.4a32 32 0 1 0-45.248-45.248L477.44 501.44l-7.552 52.8zm422.4-422.4a96 96 0 0 1 0 135.808l-331.84 331.84a32 32 0 0 1-18.112 9.088L436.8 623.68a32 32 0 0 1-36.224-36.224l15.104-105.6a32 32 0 0 1 9.024-18.112l331.904-331.84a96 96 0 0 1 135.744 0z"/></svg>
+                            <span>Editable Table</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Chart And Maps</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></g></svg>
+                            <span>Charts</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Google Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>ChartJS</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>List Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Float Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Knob Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Morris Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Nvd3 Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Peity Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Radial Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Rickshaw Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Sparkline Chart</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>C3 Chart</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 7l6-3l6 3l6-3v13l-6 3l-6-3l-6 3V7m6-3v13m6-10v13"/></svg>
+                            <span>Maps</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Google Maps</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Vector Maps</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Google Map Search API</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Location</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Pages</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M17 9H9V7a3 3 0 0 1 5.12-2.13a3.08 3.08 0 0 1 .78 1.38a1 1 0 1 0 1.94-.5a5.09 5.09 0 0 0-1.31-2.29A5 5 0 0 0 7 7v2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3Zm1 10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1Z"/></svg>
+                            <span>Authentication</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Login</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Registration</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Forgot Password</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Lock Screen</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M64 105V40a8 8 0 0 0-16 0v65a32 32 0 0 0 0 62v49a8 8 0 0 0 16 0v-49a32 32 0 0 0 0-62Zm-8 47a16 16 0 1 1 16-16a16 16 0 0 1-16 16Zm80-95V40a8 8 0 0 0-16 0v17a32 32 0 0 0 0 62v97a8 8 0 0 0 16 0v-97a32 32 0 0 0 0-62Zm-8 47a16 16 0 1 1 16-16a16 16 0 0 1-16 16Zm104 64a32.06 32.06 0 0 0-24-31V40a8 8 0 0 0-16 0v97a32 32 0 0 0 0 62v17a8 8 0 0 0 16 0v-17a32.06 32.06 0 0 0 24-31Zm-32 16a16 16 0 1 1 16-16a16 16 0 0 1-16 16Z"/></svg>
+                            <span>Maintenance</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Error</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Coming Soon</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Offline UI</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5l-8-5h16zm0 12H4V8l8 5l8-5v10z"/></svg>
+                            <span>Email</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Compose Email</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Inbox</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Read Mail</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">App</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 3H8a2 2 0 0 0-2 2v16l6-3l6 3V5a2 2 0 0 0-2-2Z"/></svg>
+                            <span>To-Do</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Extenstion</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6m-8 10v-6m-3 3h6"/></g></svg>
+                            <span>Editor</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>CK-Editor</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>WYSIWYG Editor</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z"/></svg>
+                            <span>Event Calender</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Full Calender</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>CLNDER</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M157.73 113.13a8 8 0 0 1 2.09-11.13l67.66-46.3a8 8 0 0 1 9 13.21l-67.67 46.3a7.92 7.92 0 0 1-4.51 1.4a8 8 0 0 1-6.57-3.48Zm80.87 85.09a8 8 0 0 1-11.12 2.08L136 137.7l-42.51 29.08a36 36 0 1 1-9-13.19L121.83 128l-37.39-25.59a35.86 35.86 0 1 1 9-13.19l143 97.87a8 8 0 0 1 2.16 11.13ZM80 180a20 20 0 1 0-5.86 14.14A19.85 19.85 0 0 0 80 180Zm-5.86-89.87a20 20 0 1 0-28.28 0a19.85 19.85 0 0 0 28.28 0Z"/></svg>
+                            <span>Image Cropper</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 36 36"><path fill="currentColor" d="M30.31 13v-.32a10.26 10.26 0 0 0-10.45-10a10.47 10.47 0 0 0-9.6 6.1A9.74 9.74 0 0 0 1.6 18.4a9.62 9.62 0 0 0 9.65 9.6H15v-2h-3.75A7.65 7.65 0 0 1 11 10.74h.67l.23-.63a8.43 8.43 0 0 1 8-5.4a8.26 8.26 0 0 1 8.45 8a7.75 7.75 0 0 1 0 .8l-.08.72l.65.3A6 6 0 0 1 26.38 26H21v2h5.38a8 8 0 0 0 3.93-15Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M22.28 21.85a1 1 0 0 0 .72-1.71l-5-5l-5 5a1 1 0 0 0 1.41 1.41L17 19v12.25a1 1 0 1 0 2 0V19l2.57 2.57a1 1 0 0 0 .71.28Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                            <span>File Upload</span>
+                        </div>
+                    </li>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></g></svg>
+                            <span>Change Loges</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-group">
+                <div class="heading">Other</div>
+                <ul>
+                    <li class="bar">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20"><g fill="currentColor"><path d="M6.5 6a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0Zm0 4a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0Zm0 4a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0Z"/><path fill-rule="evenodd" d="M7.5 6a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2h-7a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></g></svg>
+                            <span>Menu Levels</span>
+                            <div class="list">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <div class="sub-group">
+                            <ul>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Menu Level 2.1</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Menu Level 2.2</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                    <span>Menu Level 2.3</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="disabled">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 1.75v6.5m4.25-5s2 1.298 2 4.75a6.25 6.25 0 1 1-12.5 0c0-3.452 2-4.75 2-4.75"/></svg>
+                            <span>Disabled Menu</span>
+                        </div>
+                    </li>
+                    <li class="bar" style="margin-bottom: 80px;">
+                        <div class="grp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256"><path fill="currentColor" d="M208 128a79.94 79.94 0 0 0-32.7-64.47l-6.24-34.38A16 16 0 0 0 153.32 16h-50.64a16 16 0 0 0-15.74 13.15L80.7 63.53a79.9 79.9 0 0 0 0 128.94l6.24 34.38A16 16 0 0 0 102.68 240h50.64a16 16 0 0 0 15.74-13.15l6.24-34.38A79.94 79.94 0 0 0 208 128ZM102.68 32h50.64l3.91 21.55a79.75 79.75 0 0 0-58.46 0ZM64 128a64 64 0 1 1 64 64a64.07 64.07 0 0 1-64-64Zm89.32 96h-50.64l-3.91-21.55a79.75 79.75 0 0 0 58.46 0ZM120 128V88a8 8 0 0 1 16 0v32h32a8 8 0 0 1 0 16h-40a8 8 0 0 1-8-8Z"/></svg>
+                            <span>Sample Page</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-grp dashboard">
+                <div class="left">
+                    <div class="dash-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 9l9-7l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></g></svg>
+                    </div>
+                    <div class="dash-txt">
+                        <h3>Dashboard</h3>
+                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m3 9l9-7l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></g></svg>
+                    <span>/</span>
+                    <div>Dashboard</div>
+                </div>
+            </div>
+            <div class="main-grp analytics">
+                <div class="sub">
+                    <div class="map">
+                        <h3>Deals Analytics</h3>
+                        <div class="img">
+                            <img src="analytics.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-grp">
+                    <div class="card blue">
+                        <div class="left-card">
+                            <span>Impressions</span>
+                            <div class="amt">1,563</div>
+                            <span>May 23 - June 01 (2017)</span>
+                        </div>
+                        <div class="right-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 576 512"><path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0a144 144 0 1 1-288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card green">
+                        <div class="left-card">
+                            <span>Goal</span>
+                            <div class="amt">30,504</div>
+                            <span>May 23 - June 01 (2017)</span>
+                        </div>
+                        <div class="right-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248s248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184c0-101.69 82.29-184 184-184c101.69 0 184 82.29 184 184c0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128s128-57.31 128-128s-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64s64 28.71 64 64s-28.71 64-64 64z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card orange">
+                        <div class="left-card">
+                            <span>Impact</span>
+                            <div class="amt">42.6%</div>
+                            <span>May 23 - June 01 (2017)</span>
+                        </div>
+                        <div class="right-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"><path fill="currentColor" d="M408.781 128.007C386.356 127.578 368 146.36 368 168.79V256h-8V79.79c0-22.43-18.356-41.212-40.781-40.783C297.488 39.423 280 57.169 280 79v177h-8V40.79C272 18.36 253.644-.422 231.219.007C209.488.423 192 18.169 192 40v216h-8V80.79c0-22.43-18.356-41.212-40.781-40.783C121.488 40.423 104 58.169 104 80v235.992l-31.648-43.519c-12.993-17.866-38.009-21.817-55.877-8.823c-17.865 12.994-21.815 38.01-8.822 55.877l125.601 172.705A48 48 0 0 0 172.073 512h197.59c22.274 0 41.622-15.324 46.724-37.006l26.508-112.66a192.011 192.011 0 0 0 5.104-43.975V168c.001-21.831-17.487-39.577-39.218-39.993z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-grp range">
+                <div class="c-range first-range">
+                    <span>Published Project</span>
+                    <div class="num">
+                        <div class="count">532</div>
+                        <div class="per green">+1.69%</div>
+                    </div>
+                    <div class="g-range red">
+                        <div class="range-width"></div>
+                    </div>
+                </div>
+                <div class="c-range second-range">
+                    <span>Completed Task</span>
+                    <div class="num">
+                        <div class="count">4,569</div>
+                        <div class="per red">-0.5%</div>
+                    </div>
+                    <div class="g-range blue">
+                        <div class="range-width"></div>
+                    </div>
+                </div>
+                <div class="c-range third-range">
+                    <span>Successfull Task</span>
+                    <div class="num">
+                        <div class="count">89%</div>
+                        <div class="per green">+0.99%</div>
+                    </div>
+                    <div class="g-range green">
+                        <div class="range-width"></div>
+                    </div>
+                </div>
+                <div class="c-range fourth-range">
+                    <span>Ongoing Project</span>
+                    <div class="num">
+                        <div class="count">532</div>
+                        <div class="per green">+0.35%</div>
+                    </div>
+                    <div class="g-range orange">
+                        <div class="range-width"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-grp activity-grp">
+                <div class="a-grp graph">
+                    <div class="sales">
+                        Sales In <br>July
+                        <h3>$2665.00</h3>
+                    </div>
+                    <div class="sales">
+                        Direct Sale
+                        <h4>$1768</h4>
+                    </div>
+                    <div class="sales">
+                        Referal
+                        <h4>$897</h4>
+                    </div>
+                </div>
+                <div class="a-grp user-task">
+                    <div class="user-header">
+                        <h3>What's New</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M31 36L19 24L31 12"/></svg>
+                    </div>
+                    <div class="u-grp">
+                        <div class="user-grp">
+                            <div class="user-img">
+                                <div class="u-img">
+                                    <img src="user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>Your Manager Posted.</h4>
+                                <span class="name">Jonny michel</span>
+                            </div>
+                        </div>
+                        <div class="user-grp">
+                            <div class="user-img red">
+                                <div class="u-img red">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM8 8h12v3H4V8h4zM4 19v-6h6v2h4v-2h6l.001 6H4z"/></svg>
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>You have 3 pending Task.</h4>
+                                <span class="name">Hemilton</span>
+                            </div>
+                        </div>
+                        <div class="user-grp">
+                            <div class="user-img">
+                                <div class="u-img green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59L21 7Z"/></svg>
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>New Order Received.</h4>
+                                <span class="name">Hemilton</span>
+                            </div>
+                        </div>
+                        <div class="user-grp">
+                            <div class="user-img">
+                                <div class="u-img">
+                                    <img src="user.webp" alt="">
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>Your Manager Posted.</h4>
+                                <span class="name">Jonny michel</span>
+                            </div>
+                        </div>
+                        <div class="user-grp">
+                            <div class="user-img red">
+                                <div class="u-img red">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM8 8h12v3H4V8h4zM4 19v-6h6v2h4v-2h6l.001 6H4z"/></svg>
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>You have 3 pending Task.</h4>
+                                <span class="name">Hemilton</span>
+                            </div>
+                        </div>
+                        <div class="user-grp">
+                            <div class="user-img">
+                                <div class="u-img green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59L21 7Z"/></svg>
+                                </div>
+                            </div>
+                            <div class="user-det">
+                                <h4>New Order Received.</h4>
+                                <span class="name">Hemilton</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="a-grp user-act">
+                    <div class="user-header">
+                        <h3>Latest Activity</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M31 36L19 24L31 12"/></svg>
+                    </div>
+                    <div class="u-grp">
+                        <div class="user-group blue">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Development & Update</h4>
+                                <span class="name">Lorem ipsum dolor sit amet, <div class="a">More</div></span>
+                            </div>
+                        </div>
+                        <div class="user-group blue">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Showcaes</h4>
+                                <span class="name">Lorem dolor sit amet,  <div class="a">More</div></span>
+                            </div>
+                        </div>
+                        <div class="user-group green">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Miscellaneous</h4>
+                                <span class="name">Lorem ipsum dolor sit ipsum amet,  <div class="a">More</div></span>
+                            </div>
+                        </div>
+                        <div class="user-group red">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Development & Update</h4>
+                                <span class="name">Lorem ipsum dolor sit amet,  <div class="a">More</div></span>
+                            </div>
+                        </div>
+                        <div class="user-group blue">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Showcaes</h4>
+                                <span class="name">Lorem dolor sit amet,  <div class="a">More</div></span>
+                            </div>
+                        </div>
+                        <div class="user-group green">
+                            <div class="point-icon">
+
+                            </div>
+                            <div class="user-det">
+                                <h4>Miscellaneous</h4>
+                                <span class="name">Lorem ipsum dolor sit ipsum amet,  <div class="a">More</div></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-grp table">
+                <div class="table-header">
+                    <h3>New Products</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 48 48"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M31 36L19 24L31 12"/></svg>
+                </div>
+                <div class="pro-table">
+                    <table>
+                        <thead>
+                            <tr class="row">
+                                <th>Name</th>
+                                <th>Product Code</th>
+                                <th>Customer</th>
+                                <th>Status</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row">
+                                <td>Sofa</td>
+                                <td>#PHD001</td>
+                                <td>abc@gmail.com</td>
+                                <td class="btn"><div class="not-available">Out Stock</div> </td>
+                                <td><div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div></td>
+                            </tr>
+                            <tr class="row">
+                                <td>Computer</td>
+                                <td>#PHD002</td>
+                                <td>cdc@gmail.com</td>
+                                <td class="btn"><div class="available">In Stock </div></td>
+                                <td><div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div></td>
+                            </tr>
+                            <tr class="row">
+                                <td>Mobile</td>
+                                <td>#PHD003</td>
+                                <td>pqr@gmail.com</td>
+                                <td class="btn"><div class="not-available">Out Stock</div> </td>
+                                <td>
+                                    <div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="row">
+                                <td>Coat</td>
+                                <td>#PHD004</td>
+                                <td>bcs@gmail.com</td>
+                                <td class="btn"><div class="available">In Stock </div></td>
+                                <td><div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div></td>
+                            </tr>
+                            <tr class="row">
+                                <td>Watch</td>
+                                <td>#PHD005</td>
+                                <td>cdc@gmail.com</td>
+                                <td class="btn"><div class="available">In Stock </div></td>
+                                <td><div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div></td>
+                            </tr>
+                            <tr class="row">
+                                <td>Shoes</td>
+                                <td>#PHD006</td>
+                                <td>pqr@gmail.com</td>
+                                <td class="btn"><div class="not-available">Out Stock</div> </td>
+                                <td><div class="rating">
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star select"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="Dashboard.js"></script>
+</body>
+</html>-
